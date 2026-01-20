@@ -16,7 +16,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name="simbiber",
-    version="0.8.1",
+    version="0.8.3",
     author="Qiguang Chen",
     author_email="charleschen2333@gmail.com",
     description="a tool to fix and simplify bib automatically.",
@@ -53,3 +53,4 @@ setup(
     },
     py_modules=['Simbiber.main', 'Simbiber.SimBiberTool', 'Simbiber.BibTool'],
 )
+
