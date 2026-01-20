@@ -7,6 +7,8 @@ from bibtexparser.bwriter import BibTexWriter
 import json
 import re
 import os
+filepath = os.path.dirname(os.path.abspath(__file__)) + '/'
+
 class BibTool:
     # Assume that bib_string has valid structure
     def __init__(self, args):
@@ -59,7 +61,7 @@ class BibTool:
                      'ID': item['ID'],
                      'author': item['author'],
                      'title': item['title'], }
-        with open("keep_keys.cfg") as f:
+        with open(filepath + "keep_keys.cfg") as f:
             reserved_keys=f.read().strip("\"").strip("'").split(",")
             for key in reserved_keys:
                 if key in item:
@@ -151,4 +153,5 @@ class BibTool:
         print("Writing...")
         with open(self.args.output_path, 'a', encoding='utf-8') as bibfile:
             bibfile.write(writer.write(self.bib_database))
+
         print("Finished.")
